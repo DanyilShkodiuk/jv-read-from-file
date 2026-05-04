@@ -12,7 +12,7 @@ public class FileWork {
     private static final String SPLIT_REGEX = "[\\s\\p{Punct}]+";
 
     public String[] readFromFile(String fileName) {
-        try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             StringBuilder content = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
@@ -22,7 +22,7 @@ public class FileWork {
             List<String> result = new ArrayList<>();
             for (String word : words) {
                 String lowerWord = word.toLowerCase();
-                if(lowerWord.startsWith(TARGET_LETTER)) {
+                if (lowerWord.startsWith(TARGET_LETTER)) {
                     result.add(lowerWord);
                 }
             }
